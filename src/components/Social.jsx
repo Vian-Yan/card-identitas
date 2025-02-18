@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 
-function Icon({ icon }) {
+function Icon({ icon, link }) {
   return (
     <>
-      <button>
+      <button onClick={() => window.open(link, '_blank')}>
         <i className={`fa-brands ${icon}`}></i>
       </button>
     </>
@@ -12,6 +12,7 @@ function Icon({ icon }) {
 
 Icon.propTypes = {
   icon: PropTypes.string.isRequired,
+  link: PropTypes.string,
 };
 
 export default Icon;
